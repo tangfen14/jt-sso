@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 命名空间:唯一标识当前的mapper所映射的文件 ,与mapper接口路径一致-->
+<mapper namespace="com.jt.sso.mapper.UserMapper">
+	
+	<!--检测用户信息是否存在  -->
+	<select id="findCheckUser"  resultType="int">
+		<!--参考实例 select count(*) from tb_user where username="admin123";
+		注意:1.sql语句都小写      2.只要以字段为参数就用$    -->
+		select count(*) from tb_user where ${cloumn} = #{param}
+	</select>
+</mapper>  
